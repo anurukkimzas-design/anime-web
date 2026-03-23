@@ -21,28 +21,35 @@ align-items:center;
 }
 
 .logo{
-font-size:24px;
+font-size:26px;
 font-weight:bold;
 }
 
 .search{
-padding:8px;
-border-radius:6px;
+padding:10px;
+border-radius:8px;
 border:none;
+width:200px;
+}
+
+.container{
+display:grid;
+grid-template-columns:3fr 1fr;
+gap:20px;
+padding:30px;
 }
 
 .anime-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
 gap:20px;
-padding:30px;
 }
 
 .card{
 background:#111827;
 padding:10px;
 border-radius:12px;
-cursor:pointer;
+transition:0.2s;
 }
 
 .card img{
@@ -52,7 +59,16 @@ border-radius:10px;
 
 .card:hover{
 transform:scale(1.05);
-transition:0.2s;
+}
+
+.sidebar{
+background:#111827;
+padding:20px;
+border-radius:12px;
+}
+
+.popular-item{
+margin-bottom:15px;
 }
 </style>
 
@@ -65,33 +81,47 @@ transition:0.2s;
 <input class="search" placeholder="ค้นหาอนิเมะ...">
 </header>
 
-<section class="anime-grid">
+<div class="container">
+
+<div class="anime-grid">
 
 <div class="card">
-<img src="https://i.imgur.com/8KHKhxA.jpeg">
+<img src="https://cdn.myanimelist.net/images/anime/1337/99013.jpg">
 <h3>Solo Leveling</h3>
 <p>ตอนที่ 12</p>
 </div>
 
 <div class="card">
-<img src="https://i.imgur.com/JR6R8gG.jpeg">
+<img src="https://cdn.myanimelist.net/images/anime/1286/99889.jpg">
 <h3>Demon Slayer</h3>
 <p>ตอนที่ 8</p>
 </div>
 
 <div class="card">
-<img src="https://i.imgur.com/F7s8M8X.jpeg">
+<img src="https://cdn.myanimelist.net/images/anime/6/73245.jpg">
 <h3>One Piece</h3>
 <p>ตอนที่ 1100</p>
 </div>
 
 <div class="card">
-<img src="https://i.imgur.com/V6vH3pA.jpeg">
+<img src="https://cdn.myanimelist.net/images/anime/13/17405.jpg">
 <h3>Naruto</h3>
 <p>ตอนที่ 220</p>
 </div>
 
-</section>
+</div>
+
+<div class="sidebar">
+<h2>อนิเมะยอดนิยม</h2>
+
+<div class="popular-item">Attack on Titan</div>
+<div class="popular-item">Jujutsu Kaisen</div>
+<div class="popular-item">Dragon Ball</div>
+<div class="popular-item">Bleach</div>
+
+</div>
+
+</div>
 
 </body>
 </html>
