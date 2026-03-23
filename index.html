@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Anime Streaming</title>
-
-<style>
 body{
 margin:0;
 font-family:Arial;
@@ -16,8 +9,8 @@ header{
 background:#020617;
 padding:15px 25px;
 display:flex;
-align-items:center;
 justify-content:space-between;
+align-items:center;
 }
 
 .logo{
@@ -28,35 +21,11 @@ font-weight:bold;
 
 nav a{
 margin-right:15px;
-text-decoration:none;
 color:white;
-font-size:14px;
-}
-
-nav a:hover{
-color:#38bdf8;
-}
-
-.search{
-padding:8px;
-border-radius:6px;
-border:none;
-}
-
-.hero{
-height:300px;
-background:url("https://cdn.myanimelist.net/images/anime/1171/109222.jpg") center/cover;
-display:flex;
-align-items:end;
-padding:30px;
-font-size:32px;
-font-weight:bold;
+text-decoration:none;
 }
 
 .container{
-display:grid;
-grid-template-columns:3fr 1fr;
-gap:25px;
 padding:30px;
 }
 
@@ -70,7 +39,12 @@ gap:20px;
 background:#111827;
 border-radius:10px;
 overflow:hidden;
+cursor:pointer;
 transition:0.2s;
+}
+
+.card:hover{
+transform:scale(1.05);
 }
 
 .card img{
@@ -78,144 +52,3 @@ width:100%;
 height:260px;
 object-fit:cover;
 }
-
-.card:hover{
-transform:scale(1.05);
-}
-
-.info{
-padding:10px;
-}
-
-.sidebar{
-background:#111827;
-padding:20px;
-border-radius:10px;
-}
-
-.popular{
-display:flex;
-margin-bottom:12px;
-}
-
-.popular img{
-width:50px;
-height:70px;
-margin-right:10px;
-object-fit:cover;
-border-radius:6px;
-}
-
-footer{
-text-align:center;
-padding:30px;
-background:#020617;
-margin-top:30px;
-}
-
-@media(max-width:900px){
-.container{
-grid-template-columns:1fr;
-}
-}
-</style>
-
-</head>
-
-<body>
-
-<header>
-<div class="logo">ANIME STREAM</div>
-
-<nav>
-<a href="#">หน้าแรก</a>
-<a href="#">อนิเมะทั้งหมด</a>
-<a href="#">ยอดนิยม</a>
-<a href="#">ตารางฉาย</a>
-</nav>
-
-<input id="search" class="search" placeholder="ค้นหา...">
-</header>
-
-<div class="hero">
-Attack on Titan Final Season
-</div>
-
-<div class="container">
-
-<div>
-
-<h2>อนิเมะล่าสุด</h2>
-<div id="list" class="grid"></div>
-
-</div>
-
-<div class="sidebar">
-
-<h3>ยอดนิยม</h3>
-
-<div class="popular">
-<img src="https://cdn.myanimelist.net/images/anime/1171/109222.jpg">
-Attack on Titan
-</div>
-
-<div class="popular">
-<img src="https://cdn.myanimelist.net/images/anime/1764/126627.jpg">
-Jujutsu Kaisen
-</div>
-
-<div class="popular">
-<img src="https://cdn.myanimelist.net/images/anime/1337/99013.jpg">
-Solo Leveling
-</div>
-
-<div class="popular">
-<img src="https://cdn.myanimelist.net/images/anime/6/73245.jpg">
-One Piece
-</div>
-
-</div>
-
-</div>
-
-<footer>
-Anime Website Demo
-</footer>
-
-<script>
-const data=[
-{title:"Solo Leveling",ep:"ตอนที่ 12",img:"https://cdn.myanimelist.net/images/anime/1337/99013.jpg"},
-{title:"Demon Slayer",ep:"ตอนที่ 8",img:"https://cdn.myanimelist.net/images/anime/1286/99889.jpg"},
-{title:"One Piece",ep:"ตอนที่ 1100",img:"https://cdn.myanimelist.net/images/anime/6/73245.jpg"},
-{title:"Naruto",ep:"ตอนที่ 220",img:"https://cdn.myanimelist.net/images/anime/13/17405.jpg"},
-{title:"Attack on Titan",ep:"ตอนล่าสุด",img:"https://cdn.myanimelist.net/images/anime/1171/109222.jpg"},
-{title:"Jujutsu Kaisen",ep:"ตอนล่าสุด",img:"https://cdn.myanimelist.net/images/anime/1764/126627.jpg"}
-];
-
-const list=document.getElementById("list");
-
-function show(d){
-list.innerHTML="";
-d.forEach(a=>{
-list.innerHTML+=`
-<div class="card">
-<img src="${a.img}">
-<div class="info">
-<h3>${a.title}</h3>
-<p>${a.ep}</p>
-</div>
-</div>
-`;
-});
-}
-
-show(data);
-
-document.getElementById("search").addEventListener("input",e=>{
-const v=e.target.value.toLowerCase();
-show(data.filter(a=>a.title.toLowerCase().includes(v)));
-});
-</script>
-
-</body>
-</html>
