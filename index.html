@@ -2,35 +2,34 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Anime Web</title>
+<title>Anime Streaming</title>
 
 <style>
 body{
-background:#0f172a;
-color:white;
-font-family:Arial;
 margin:0;
+font-family:Arial;
+background:#0b1120;
+color:white;
 }
 
 header{
 background:#020617;
-padding:20px;
+padding:15px 25px;
 display:flex;
-justify-content:space-between;
 align-items:center;
-flex-wrap:wrap;
+justify-content:space-between;
 }
 
 .logo{
-font-size:28px;
-font-weight:bold;
+font-size:26px;
 color:#38bdf8;
+font-weight:bold;
 }
 
 nav a{
 margin-right:15px;
-color:white;
 text-decoration:none;
+color:white;
 font-size:14px;
 }
 
@@ -39,10 +38,19 @@ color:#38bdf8;
 }
 
 .search{
-padding:10px;
-border-radius:8px;
+padding:8px;
+border-radius:6px;
 border:none;
-margin-top:10px;
+}
+
+.hero{
+height:300px;
+background:url("https://cdn.myanimelist.net/images/anime/1171/109222.jpg") center/cover;
+display:flex;
+align-items:end;
+padding:30px;
+font-size:32px;
+font-weight:bold;
 }
 
 .container{
@@ -52,7 +60,7 @@ gap:25px;
 padding:30px;
 }
 
-.anime-grid{
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
 gap:20px;
@@ -60,7 +68,7 @@ gap:20px;
 
 .card{
 background:#111827;
-border-radius:12px;
+border-radius:10px;
 overflow:hidden;
 transition:0.2s;
 }
@@ -73,37 +81,36 @@ object-fit:cover;
 
 .card:hover{
 transform:scale(1.05);
-box-shadow:0 0 15px #000;
 }
 
-.card-info{
+.info{
 padding:10px;
 }
 
 .sidebar{
 background:#111827;
 padding:20px;
-border-radius:12px;
-height:fit-content;
+border-radius:10px;
 }
 
 .popular{
 display:flex;
-align-items:center;
-margin-bottom:15px;
+margin-bottom:12px;
 }
 
 .popular img{
 width:50px;
 height:70px;
-object-fit:cover;
 margin-right:10px;
+object-fit:cover;
 border-radius:6px;
 }
 
-.section-title{
-font-size:22px;
-margin-bottom:15px;
+footer{
+text-align:center;
+padding:30px;
+background:#020617;
+margin-top:30px;
 }
 
 @media(max-width:900px){
@@ -118,30 +125,34 @@ grid-template-columns:1fr;
 <body>
 
 <header>
-<div class="logo">ANIME WEB</div>
+<div class="logo">ANIME STREAM</div>
 
 <nav>
 <a href="#">หน้าแรก</a>
-<a href="#">อนิเมะล่าสุด</a>
+<a href="#">อนิเมะทั้งหมด</a>
 <a href="#">ยอดนิยม</a>
-<a href="#">ตารางอนิเมะ</a>
+<a href="#">ตารางฉาย</a>
 </nav>
 
-<input id="search" class="search" placeholder="ค้นหาอนิเมะ...">
+<input id="search" class="search" placeholder="ค้นหา...">
 </header>
+
+<div class="hero">
+Attack on Titan Final Season
+</div>
 
 <div class="container">
 
 <div>
-<div class="section-title">อนิเมะตอนล่าสุด</div>
 
-<div id="animeList" class="anime-grid"></div>
+<h2>อนิเมะล่าสุด</h2>
+<div id="list" class="grid"></div>
 
 </div>
 
 <div class="sidebar">
 
-<h2>อนิเมะยอดนิยม</h2>
+<h3>ยอดนิยม</h3>
 
 <div class="popular">
 <img src="https://cdn.myanimelist.net/images/anime/1171/109222.jpg">
@@ -167,63 +178,42 @@ One Piece
 
 </div>
 
+<footer>
+Anime Website Demo
+</footer>
+
 <script>
-const animeData = [
-{
-title:"Solo Leveling",
-episode:"ตอนที่ 12",
-img:"https://cdn.myanimelist.net/images/anime/1337/99013.jpg"
-},
-{
-title:"Demon Slayer",
-episode:"ตอนที่ 8",
-img:"https://cdn.myanimelist.net/images/anime/1286/99889.jpg"
-},
-{
-title:"One Piece",
-episode:"ตอนที่ 1100",
-img:"https://cdn.myanimelist.net/images/anime/6/73245.jpg"
-},
-{
-title:"Naruto",
-episode:"ตอนที่ 220",
-img:"https://cdn.myanimelist.net/images/anime/13/17405.jpg"
-},
-{
-title:"Attack on Titan",
-episode:"ตอนล่าสุด",
-img:"https://cdn.myanimelist.net/images/anime/1171/109222.jpg"
-},
-{
-title:"Jujutsu Kaisen",
-episode:"ตอนล่าสุด",
-img:"https://cdn.myanimelist.net/images/anime/1764/126627.jpg"
-}
+const data=[
+{title:"Solo Leveling",ep:"ตอนที่ 12",img:"https://cdn.myanimelist.net/images/anime/1337/99013.jpg"},
+{title:"Demon Slayer",ep:"ตอนที่ 8",img:"https://cdn.myanimelist.net/images/anime/1286/99889.jpg"},
+{title:"One Piece",ep:"ตอนที่ 1100",img:"https://cdn.myanimelist.net/images/anime/6/73245.jpg"},
+{title:"Naruto",ep:"ตอนที่ 220",img:"https://cdn.myanimelist.net/images/anime/13/17405.jpg"},
+{title:"Attack on Titan",ep:"ตอนล่าสุด",img:"https://cdn.myanimelist.net/images/anime/1171/109222.jpg"},
+{title:"Jujutsu Kaisen",ep:"ตอนล่าสุด",img:"https://cdn.myanimelist.net/images/anime/1764/126627.jpg"}
 ];
 
-const list = document.getElementById("animeList");
+const list=document.getElementById("list");
 
-function showAnime(data){
+function show(d){
 list.innerHTML="";
-data.forEach(a=>{
+d.forEach(a=>{
 list.innerHTML+=`
 <div class="card">
 <img src="${a.img}">
-<div class="card-info">
+<div class="info">
 <h3>${a.title}</h3>
-<p>${a.episode}</p>
+<p>${a.ep}</p>
 </div>
 </div>
 `;
 });
 }
 
-showAnime(animeData);
+show(data);
 
-document.getElementById("search").addEventListener("input", function(){
-const value = this.value.toLowerCase();
-const filtered = animeData.filter(a=>a.title.toLowerCase().includes(value));
-showAnime(filtered);
+document.getElementById("search").addEventListener("input",e=>{
+const v=e.target.value.toLowerCase();
+show(data.filter(a=>a.title.toLowerCase().includes(v)));
 });
 </script>
 
