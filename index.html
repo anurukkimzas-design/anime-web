@@ -1,10 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Anime Stream</title>
+
+<style>
 body{
 margin:0;
 font-family:Arial;
 background:#0b1120;
 color:white;
 }
- 
+
 header{
 background:#020617;
 padding:15px 25px;
@@ -52,3 +59,56 @@ width:100%;
 height:260px;
 object-fit:cover;
 }
+</style>
+
+</head>
+
+<body>
+
+<header>
+<div class="logo">ANIME STREAM</div>
+<nav>
+<a href="#">หน้าแรก</a>
+<a href="#">อนิเมะทั้งหมด</a>
+</nav>
+</header>
+
+<div class="container">
+<h2>อนิเมะล่าสุด</h2>
+<div id="list" class="grid"></div>
+</div>
+
+<script>
+const animeData=[
+{
+title:"Attack on Titan",
+img:"https://cdn.myanimelist.net/images/anime/1171/109222.jpg"
+},
+{
+title:"Jujutsu Kaisen",
+img:"https://cdn.myanimelist.net/images/anime/1764/126627.jpg"
+},
+{
+title:"Solo Leveling",
+img:"https://cdn.myanimelist.net/images/anime/1337/99013.jpg"
+},
+{
+title:"One Piece",
+img:"https://cdn.myanimelist.net/images/anime/6/73245.jpg"
+}
+];
+
+const list=document.getElementById("list");
+
+animeData.forEach(a=>{
+list.innerHTML+=`
+<div class="card">
+<img src="${a.img}">
+<h3>${a.title}</h3>
+</div>
+`;
+});
+</script>
+
+</body>
+</html>
