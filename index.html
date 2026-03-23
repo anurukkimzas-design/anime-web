@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Anime Web</title>
+
+<style>
+body{
+background:#0f172a;
+color:white;
+font-family:Arial;
+margin:0;
+}
+
+header{
+background:#020617;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+}
+
+.search{
+padding:8px;
+border-radius:6px;
+border:none;
+}
+
+.anime-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+padding:30px;
+}
+
+.card{
+background:#111827;
+padding:10px;
+border-radius:12px;
+cursor:pointer;
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+}
+
+.card:hover{
+transform:scale(1.05);
+transition:0.2s;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<div class="logo">ANIME WEB</div>
+<input class="search" placeholder="ค้นหาอนิเมะ...">
+</header>
+
+<section class="anime-grid">
+
+<div class="card">
+<img src="https://i.imgur.com/8KHKhxA.jpeg">
+<h3>Solo Leveling</h3>
+<p>ตอนที่ 12</p>
+</div>
+
+<div class="card">
+<img src="https://i.imgur.com/JR6R8gG.jpeg">
+<h3>Demon Slayer</h3>
+<p>ตอนที่ 8</p>
+</div>
+
+<div class="card">
+<img src="https://i.imgur.com/F7s8M8X.jpeg">
+<h3>One Piece</h3>
+<p>ตอนที่ 1100</p>
+</div>
+
+<div class="card">
+<img src="https://i.imgur.com/V6vH3pA.jpeg">
+<h3>Naruto</h3>
+<p>ตอนที่ 220</p>
+</div>
+
+</section>
+
+</body>
+</html>
