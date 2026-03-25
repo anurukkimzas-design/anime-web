@@ -1,59 +1,25 @@
-body{
-margin:0;
-font-family:Arial;
-background:#0b1120;
-color:white;
+/* จัดระเบียบรายการอนิเมะ */
+.anime-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* ปรับขนาดอัตโนมัติตามหน้าจอ */
+    gap: 20px;
+    padding: 20px;
 }
 
-header{
-background:#020617;
-padding:15px 25px;
-display:flex;
-justify-content:space-between;
-align-items:center;
+/* ตกแต่งการ์ดอนิเมะ */
+.anime-card {
+    background: #1f2937;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
 }
 
-.logo{
-font-size:26px;
-color:#38bdf8;
-font-weight:bold;
+.anime-card:hover {
+    transform: translateY(-5px); /* เลื่อนขึ้นเล็กน้อยเวลาเอาเมาส์วาง */
 }
 
-nav a{
-margin-right:15px;
-color:white;
-text-decoration:none;
-}
-
-.container{
-padding:30px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
-gap:20px;
-}
-
-.card{
-background:#111827;
-border-radius:10px;
-overflow:hidden;
-cursor:pointer;
-transition:0.2s;
-}
-
-.card:hover{
-transform:scale(1.05);
-}
-
-.card img{
-width:100%;
-height:260px;
-object-fit:cover;
-}
-
-.title{
-padding:10px;
-font-weight:bold;
+.anime-card img {
+    width: 100%;
+    aspect-ratio: 2/3; /* บังคับสัดส่วนรูปหน้าปก */
+    object-fit: cover;
 }
