@@ -1,92 +1,18 @@
-/* ตั้งค่าพื้นฐาน */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-    background-color: #0b0c10; /* พื้นหลังมืดแบบพรีเมียม */
-    color: white;
-}
-
-/* ส่วนหัว (Navbar) */
-header {
-    background-color: #1f2833;
-    padding: 1rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-header h1 {
-    color: #66fcf1; /* สีฟ้าสว่างแบบในรูปต้นฉบับ */
-    font-size: 1.5rem;
-}
-
-/* ช่องค้นหา */
-.search-box input {
-    padding: 8px 15px;
-    border-radius: 20px;
-    border: none;
-    outline: none;
-}
-
-/* จัดเลย์เอาต์การ์ดอนิเมะ */
-.container {
-    padding: 2rem 5%;
-}
-
-.anime-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* ปรับขนาดอัตโนมัติตามจอ */
-    gap: 20px;
-}
-
-/* ตกแต่งการ์ดรายเรื่อง */
-.anime-card {
-    background: #1f2833;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: 0.3s;
-    position: relative;
-    cursor: pointer;
-}
-
-.anime-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-}
-
 .anime-card img {
     width: 100%;
-    aspect-ratio: 2/3; /* สัดส่วนแนวตั้งสวยๆ */
-    object-fit: cover;
-}
-
-.anime-info {
-    padding: 10px;
+    height: 250px; /* กำหนดความสูงให้แน่นอน */
+    object-fit: cover; /* บังคับให้รูปเต็มกรอบโดยไม่เบี้ยว */
+    border-bottom: 2px solid #66fcf1; /* เพิ่มเส้นใต้รูปให้ดูเท่ */
 }
 
 .anime-info h3 {
+    padding: 10px;
     font-size: 14px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; /* ตัดคำถ้าชื่อยาวเกินไป */
+    color: #ffffff;
+    text-align: center;
 }
 
-/* ป้ายบอกสถานะ (ซับไทย/พากย์ไทย) */
-.badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: #ff4b2b;
-    color: white;
-    padding: 2px 8px;
-    font-size: 12px;
-    border-radius: 4px;
+/* เพิ่มเงาให้การ์ด */
+.anime-card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 }
