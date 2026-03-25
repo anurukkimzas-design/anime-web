@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<title>Anime Stream</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIME STREAM - ดูอนิเมะออนไลน์</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-<div class="logo">ANIME STREAM</div>
+    <header>
+        <h1>ANIME STREAM</h1>
+        <div class="search-box">
+            <input type="text" placeholder="ค้นหาอนิเมะ...">
+        </div>
+    </header>
 
-<nav>
-<a href="#">หน้าแรก</a>
-<a href="#">อนิเมะทั้งหมด</a>
-</nav>
+    <div class="container">
+        <h2 style="margin-bottom: 20px;">อนิเมะล่าสุด</h2>
+        <div class="anime-grid" id="anime-display">
+            </div>
+    </div>
 
-<input type="text" id="search" placeholder="ค้นหา...">
-
-</header>
-
-<div class="container">
-
-<h2>อนิเมะล่าสุด</h2>
-
-<div class="grid" id="animeList"></div>
-
-</div>
-
-<script src="data.js"></script>
-<script src="script.js"></script>
-
+    <script src="data.js"></script>
+    <script>
+        // โค้ดสำหรับแสดงผลอนิเมะ
+        const display = document.getElementById('anime-display');
+        
+        animeList.forEach(anime => {
+            display.innerHTML += `
+                <div class="anime-card">
+                    <span class="badge">${anime.status}</span>
+                    <img src="${anime.image}" alt="${anime.title}">
+                    <div class="anime-info">
+                        <h3>${anime.title}</h3>
+                    </div>
+                </div>
+            `;
+        });
+    </script>
 </body>
 </html>
